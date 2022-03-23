@@ -1,0 +1,33 @@
+{
+  "name": "mission-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "cluster": "pm2 start src/server.js -i max"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.0.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.6",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "pm2": "^5.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
