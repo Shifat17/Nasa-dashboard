@@ -15,7 +15,7 @@ describe('Launches Api', () => {
 
   describe('Test GET /launches', () => {
     test('It should respond with 200 success', async () => {
-      const response = await request(app).get('v1//launches');
+      const response = await request(app).get('/v1/launches');
       expect(response.statusCode).toBe(200);
     });
   });
@@ -43,7 +43,7 @@ describe('Launches Api', () => {
 
     test('It should respond with 200 success', async () => {
       const response = await request(app)
-        .post('v1/launches')
+        .post('/v1/launches')
         .send(completLaunchData)
         .expect('Content-Type', /json/)
         .expect(200);
@@ -55,7 +55,7 @@ describe('Launches Api', () => {
 
     test('It should respond with 400 error', async () => {
       const response = await request(app)
-        .post('v1/launches')
+        .post('/v1/launches')
         .send(launchDataWithoutDate);
 
       expect(response.body).toStrictEqual({
@@ -65,7 +65,7 @@ describe('Launches Api', () => {
 
     test('It should respond with 400 error', async () => {
       const response = await request(app)
-        .post('v1/launches')
+        .post('/v1/launches')
         .send(launchDataWithInvalidDate);
 
       expect(response.body).toStrictEqual({
